@@ -1,0 +1,270 @@
+/* Styling for the entire document */
+html {
+    /* Consideration: The design asks for GT America font family,
+        but I do not have that font and it is not free.
+    */
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Styling for body of document */
+body {
+    margin: 0;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: white;
+}
+.navbar-logo {
+    padding: 24px;
+}
+
+/* Navigation Bar Menu Styling */
+.navbar-menu {
+    height: 100vh;
+    background-color: white;
+}
+.navbar-menu-toggle-label {
+    /* Move this to the top right */
+    position: absolute;
+    /* These numbers were from the design */
+    right: 29px;
+    top: 28px;
+    cursor: pointer;
+}
+#navbar-menu-toggle {
+    /* Hide the actual checkbox */
+    display: none;
+}
+/* A method of toggling the menu without JS */
+#navbar-menu-toggle + .navbar-menu {
+    /* Unchecked behavior, navbar menu is closed */
+    display: none;
+}
+#navbar-menu-toggle:checked + .navbar-menu {
+    /* Checked behavior, navbar menu is open */
+    display: block;
+}
+
+.navbar-nav-links{
+    /* Get rid of the left-indent and bullet points */
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.navbar-nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.navbar-nav-links a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-nav-links li {
+    /* Add spacing between links */
+    padding: 24px 24px;
+    /* Add a border line below */
+    border-bottom: 1px solid hsl(0, 0%, 85%);
+}
+
+/* Responsive menu for desktop needs to change */
+@media only screen and (min-width: 768px) {
+    /* Display the entire navbar regardless of check-state */
+    #navbar-menu-toggle + .navbar-menu,
+    #navbar-menu-toggle:checked + .navbar-menu {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        max-height: 74px;
+    }
+
+    /* Make hamburger menu button disappear */
+    .navbar-menu-toggle-label {
+        display: none;
+    }
+
+    .navbar-nav-links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navbar-nav-links li {
+        border-bottom: 1px solid white;
+    }
+
+    .navbar-main-navigation {
+        position: absolute;
+        left: calc(50% - 278px / 2);
+        padding: 0px;
+    }
+    .navbar-main-navigation li {
+        padding: 8px 16px;
+        margin: 0px 10px;
+    }
+}
+
+/* Styling the main content */
+main.main-content {
+    padding: 48px 24px;
+}
+
+@media only screen and (min-width: 768px) {
+    main.main-content {
+        padding: 0px;
+    }
+}
+
+/* Styling the header */
+.page-header {
+    margin: 40px 0px;
+    padding: 64px 24px;
+}
+
+.page-label {
+    color: #6E7A82;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+
+    margin: 24px 0px;
+}
+
+.page-title {
+    color: #000000;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 120%;
+    text-align: center;
+
+    margin: 24px 0px;
+}
+
+.page-description {
+    color: #6E7A82;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 140%;
+    text-align: center;
+
+    margin: 24px 0px;
+}
+
+/* Desktop View for header section */
+@media only screen and (min-width: 768px) {
+    .page-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+    .page-label {
+        max-width: 327px;
+    }
+    .page-title {
+        max-width: 390px;
+    }
+    .page-description {
+        max-width: 509px;
+    }
+}
+
+/* Styling the articles */
+
+#articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Article list desktop view */
+@media only screen and (min-width: 768px) {
+    #articles {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0px 0px 88px;
+    }
+}
+
+.education-article {
+    margin: 0 24px;
+    background-color: white;
+    border-radius: 0px 0px 8px 8px;
+    /* Shadow from design */
+    filter: drop-shadow(0px 13px 27px rgba(0, 0, 0, 0.07)) drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.14)) drop-shadow(0px -6px 16px rgba(0, 0, 0, 0.02));
+    margin: 48px 0px;
+}
+
+/* per-article desktop view */
+@media only screen and (min-width: 768px) {
+    .education-article {
+        width: 496px;
+
+        margin: 0px 16px;
+    }
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 24px;
+
+    border-radius: 0px 0px 8px 8px;
+}
+
+.article-image {
+    width: 100%;
+    height: 47vh;
+    border-radius: 8px 8px 0px 0px;
+    object-fit: cover;
+}
+/* Adding a breakpoint for the article image to change the object fit behavior */
+@media only screen and (min-width: 496px) {
+    .article-image {
+        height: auto;
+    }
+}
+
+.article-title {
+    color: #000000;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 140%;
+
+    margin: 8px 0;
+}
+
+.article-summary {
+    color: #38444C;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 160%;
+
+    margin: 8px 0;
+}
+
+
