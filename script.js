@@ -45,6 +45,9 @@ const makeArticle = function(title, summary, {imageSrc, imageAlt}) {
     // create main article w/ attributes
     const article = document.createElement('article');
     article.setAttribute('class', 'education-article');
+    // For accessibility, allow this article to be tab-selected
+    article.setAttribute('tabindex', 0);
+    article.setAttribute('aria-label', `Article name: ${title}`)
 
     // create image
     const image = document.createElement('img');
