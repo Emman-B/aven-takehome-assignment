@@ -81,6 +81,9 @@ body {
 
 /* Responsive menu for desktop needs to change */
 @media only screen and (min-width: 900px) {
+    .navbar {
+        position: static;
+    }
     /* Display the entire navbar regardless of check-state */
     #navbar-menu-toggle + .navbar-menu,
     #navbar-menu-toggle:checked + .navbar-menu {
@@ -160,8 +163,7 @@ main.main-content {
 
 /* Styling the header */
 .page-header {
-    margin: 40px 0px;
-    padding: 64px 24px;
+    margin: 100px 0px 40px;
 }
 
 .page-label {
@@ -206,6 +208,7 @@ main.main-content {
         flex-direction: column;
         align-items: center;
         margin: 0;
+        padding: 64px 24px;
     }
     .page-label {
         max-width: 327px;
