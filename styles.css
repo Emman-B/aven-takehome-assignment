@@ -225,8 +225,8 @@ main.main-content {
     flex-direction: column;
     align-items: center;
 }
-/* Article list desktop view */
-@media only screen and (min-width: 900px) {
+/* Article list tablet/desktop view */
+@media only screen and (min-width: 768px) {
     #articles {
         flex-direction: row;
         justify-content: center;
@@ -244,8 +244,8 @@ main.main-content {
     margin: 48px 0px;
 }
 
-/* per-article desktop view */
-@media only screen and (min-width: 900px) {
+/* per-article tablet/desktop view */
+@media only screen and (min-width: 768px) {
     .education-article {
         width: 496px;
 
@@ -297,3 +297,82 @@ main.main-content {
 }
 
 
+/* Styling the footer */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    padding-left: 44px;
+    border-top: 1px solid #D8DCDF;
+    border-bottom: 1px solid #D8DCDF;
+    height: 87px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    padding-left: 24px;
+}
+
+.links-group {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0px 20px;
+}
+
+.footer-link-header {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #6E7A82;
+}
+
+.footer-link,
+.footer-link:visited {
+    text-decoration: none;
+    color: #6E7A82;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 160%;
+
+    margin: 8px 0px;
+}
+
+.footer-copyright  {
+    padding: 12px;
+    margin: 10px calc(44px - 12px);
+
+    color: #6E7A82;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+/* Desktop/Tablet styling for footer */
+@media only screen and (min-width: 768px) {
+    .footer-logo {
+        padding-left: 88px;
+    }
+    
+    .footer-links {
+        padding-left: 48px;
+    }
+    
+    .links-group {
+        margin: 0px 40px;
+    }
+    
+    .footer-copyright  {
+        padding: 24px;
+        margin: 10px calc(88px - 24px);
+    }
+}
