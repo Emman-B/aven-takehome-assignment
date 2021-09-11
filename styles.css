@@ -21,7 +21,10 @@ body {
     background-color: white;
 }
 .navbar-logo {
+    position: relative;
     padding: 24px;
+    width: 71px;
+    z-index: 150;
 }
 
 /* Navigation Bar Menu Styling */
@@ -77,7 +80,7 @@ body {
 }
 
 /* Responsive menu for desktop needs to change */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
     /* Display the entire navbar regardless of check-state */
     #navbar-menu-toggle + .navbar-menu,
     #navbar-menu-toggle:checked + .navbar-menu {
@@ -101,6 +104,7 @@ body {
     .navbar-nav-links {
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
 
     .navbar-nav-links li {
@@ -116,6 +120,31 @@ body {
         padding: 8px 16px;
         margin: 0px 10px;
     }
+
+    .navbar-sign-in-and-offers {
+        position: absolute;
+        right: 0px;
+    }
+
+    li.check-offers {
+        /* For centering the item */
+        display: flex;
+        align-items: center;
+
+        /* Sizing */
+        box-sizing: border-box;
+        height: 42px;
+        padding: 8px 24px;
+        margin: 0px 32px;
+
+        background-color: black;
+        border-radius: 40px;
+        text-align: center;
+    }
+    .check-offers a,
+    .check-offers a:visited {
+        color: white;
+    }
 }
 
 /* Styling the main content */
@@ -123,7 +152,7 @@ main.main-content {
     padding: 48px 24px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
     main.main-content {
         padding: 0px;
     }
@@ -171,7 +200,7 @@ main.main-content {
 }
 
 /* Desktop View for header section */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
     .page-header {
         display: flex;
         flex-direction: column;
@@ -197,7 +226,7 @@ main.main-content {
     align-items: center;
 }
 /* Article list desktop view */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
     #articles {
         flex-direction: row;
         justify-content: center;
@@ -216,7 +245,7 @@ main.main-content {
 }
 
 /* per-article desktop view */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
     .education-article {
         width: 496px;
 
